@@ -1,17 +1,4 @@
-:root {
-  color-scheme: light;
-  --bg: #f5f5f7;
-  --surface: #ffffff;
-  --ink: #1d1d1f;
-  --muted: #6c6c70;
-  --line: #d2d2d7;
-  --blue: #0071e3;
-  --blue-dark: #004096;
-  --green: #30ae65;
-  --orange: #f5872f;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+@import url("./design-tokens.css");
 
 * {
   box-sizing: border-box;
@@ -22,6 +9,7 @@ html {
 }
 
 body {
+  font-family: var(--font-family-body);
   margin: 0;
   background: var(--bg);
   color: var(--ink);
@@ -34,7 +22,7 @@ a {
 
 p {
   color: var(--muted);
-  font-size: 17px;
+  font-size: var(--font-size-body);
   line-height: 1.6;
   margin: 0 0 12px;
 }
@@ -48,17 +36,17 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(var(--font-size-h1-min), 6vw, var(--font-size-h1-max));
   max-width: 820px;
 }
 
 h2 {
-  font-size: clamp(34px, 4vw, 56px);
+  font-size: clamp(var(--font-size-h2-min), 4vw, var(--font-size-h2-max));
   max-width: 780px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: var(--font-size-h3);
 }
 
 .site-header {
@@ -145,7 +133,7 @@ h3 {
 }
 
 .section {
-  padding: 108px 96px;
+  padding: var(--section-space-y) var(--section-space-x);
 }
 
 .hero {
@@ -213,6 +201,17 @@ h3 {
   min-height: 360px;
   overflow: hidden;
   padding: 32px;
+}
+
+.image-slot.has-image {
+  padding: 0;
+}
+
+.image-slot.has-image img {
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  width: 100%;
 }
 
 .image-slot span {
@@ -408,19 +407,19 @@ h3 {
   }
 
   h1 {
-    font-size: 42px;
+    font-size: var(--font-size-h1-mobile);
   }
 
   h2 {
-    font-size: 34px;
+    font-size: var(--font-size-h2-mobile);
   }
 
   h3 {
-    font-size: 21px;
+    font-size: var(--font-size-h3-mobile);
   }
 
   p {
-    font-size: 16px;
+    font-size: var(--font-size-body-mobile);
   }
 
   .lead-cn {
@@ -473,7 +472,7 @@ h3 {
 
 @media (max-width: 430px) {
   h1 {
-    font-size: 40px;
+    font-size: var(--font-size-h1-small);
   }
 
   .button {

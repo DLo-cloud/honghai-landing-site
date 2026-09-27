@@ -205,13 +205,17 @@ h3 {
 
 .image-slot.has-image {
   padding: 0;
+  min-height: 0;
+  display: block;
+  align-self: start;
 }
 
 .image-slot.has-image img {
-  height: 100%;
-  min-height: inherit;
-  object-fit: cover;
+  display: block;
   width: 100%;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
 }
 
 .image-slot span {

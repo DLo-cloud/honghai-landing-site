@@ -1,0 +1,10 @@
+.git
+.github
+src
+build.py
+README.md
+SYNC_GUIDE.md
+deploy.command
+preview.command
+wrangler.jsonc
+dist

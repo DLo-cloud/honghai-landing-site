@@ -1,46 +1,9 @@
-# Honghai Landing Site
+# Cohesol / Honghap Solution
 
-Static website for Honghai Solution.
+正式網站：https://cohesol.com/
 
-## Local Preview
+Cohesol 是 Honghap Solution 旗下品牌。英、法、繁中；酒店與廚房設備、新能源應用、鋁型材模組化結構。
 
-Open `index.html` in a browser, or run a simple static server:
+共用結構：src/template.html；文案：src/copy.tsv；樣式及互動：dist/styles.css、dist/script.js。執行 python3 build.py 生成三語頁面；Cloudflare Workers 讀取 wrangler.jsonc 的 dist 靜態目錄。圖片為已標示的AI概念，表單在瀏覽器整理需求並開啟電郵草稿。
 
-```sh
-python3 -m http.server 4173
-```
-
-Then visit `http://localhost:4173`.
-
-## Replace Images
-
-All temporary image areas are marked in HTML with:
-
-```html
-data-replaceable="true"
-```
-
-When final images are ready, replace each `.image-slot` block with an `<img>` element or set a CSS background image.
-
-Recommended image sizes:
-
-- Hero: 920 x 1040
-- About images: 600 x 820
-- Solution images: 688 x 300
-- Product images: 360 x 220
-
-## Cloudflare Pages Deployment
-
-Recommended setup:
-
-1. Create a GitHub repository.
-2. Push this folder to the repository.
-3. In Cloudflare, go to **Workers & Pages**.
-4. Create a Pages project and connect the GitHub repository.
-5. Build command: leave empty.
-6. Build output directory: `/` if this repository only contains this site, or `honghai-landing-site` if using the current workspace as the repository root.
-7. Add the custom domain from Cloudflare Pages.
-
-## Direct Upload Alternative
-
-For the fastest one-time upload, upload the contents of this folder directly to Cloudflare Pages.
+原正式站部署前提交：e1599c207bbbde0af6acf4c889da385048e0daa3。源碼ZIP另存本機 Cohesol備份。回復時建立還原提交，保留歷史。

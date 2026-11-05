@@ -75,11 +75,17 @@ contact_intro = {
     'fr': ('Indiquez-nous ce que vous recherchez, le lieu d’utilisation et le délai souhaité.', 'Préparer un descriptif du projet'),
     'zh-Hant': ('歡迎告訴我們你想採購甚麼、使用地點和預計交付時間。', '整理你的項目需求'),
 }
+contact_channels = {
+    'en': ('Languages: French, English, Cantonese and Mandarin.', 'Open WhatsApp', 'WeChat', 'Enlarge QR code'),
+    'fr': ('Langues parlées : français, anglais, cantonais et mandarin.', 'Ouvrir WhatsApp', 'WeChat', 'Agrandir le QR code'),
+    'zh-Hant': ('可使用語言：法語、英語、粵語、國語。', '開啟 WhatsApp', '微信', '放大微信二維碼'),
+}
 for lang, path in paths.items():
+    spoken, wa, wc, zoom = contact_channels[lang]
     target = ROOT / 'dist' / path / 'contact'
     target.mkdir(parents=True, exist_ok=True)
     intro, brief = contact_intro[lang]
     (target / 'index.html').write_text(contact_template.substitute(
         lang=lang, path=path, title=copy['navStart'][lang], intro=intro, brief=brief,
-        messaging=copy['messagingContact'][lang], region=copy['contactLocation'][lang],
+        spoken=spoken, wa=wa, wc=wc, zoom=zoom, region=copy['contactLocation'][lang],
     ))

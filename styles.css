@@ -28,3 +28,11 @@ html[lang=en] .hero h1{font-size:clamp(45px,4.4vw,70px);line-height:1.12;letter-
 
 .footer-contact { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 0 0 20px; font-size: 14px; font-style: normal; }
 .footer-contact a { text-decoration: underline; text-underline-offset: 3px; }
+
+.messenger-cards { display: flex; flex-wrap: wrap; gap: 16px; margin: 24px 0; }
+.messenger-cards section { padding: 18px; background: white; border: 1px solid var(--line); }
+.messenger-cards h2 { display: flex; align-items: center; gap: 8px; margin: 0; font-weight: 600; line-height: 1.3; font-family: inherit; font-size: 20px; letter-spacing: normal; }
+.messenger-cards svg { width: 24px; height: 24px; color: #20553d; }
+.messenger-cards p { margin: 6px 0 0; }
+.messenger-cards a { display: grid; gap: 5px; text-decoration: underline; font-size: 14px; }
+.messenger-cards img { width: 188px; max-width: 100%; height: auto; }

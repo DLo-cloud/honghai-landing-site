@@ -39,6 +39,7 @@ for lang, path in list(paths.items()) + [('en', '')]:
         languages += '<a href="' + prefix + paths[code] + '/" lang="' + code + '" hreflang="' + code + '"' + (' aria-current="page"' if code == lang else '') + '>' + label + '</a>'
     languages += '</nav></details>'
     page = re.sub(r'<button id="language".*?</button>', languages, page)
+    page = page.replace('./CONTACT_ROUTE', '/' + paths[lang] + '/contact/')
     page = page.replace('src="./', 'src="' + prefix).replace('href="./', 'href="' + prefix)
     page = page.replace('SOLAR · STORAGE · SOURCING', {'en':'SOLUTION-LED SOURCING', 'fr':'APPROVISIONNEMENT & SOLUTIONS', 'zh-Hant':'SOLUTION-LED SOURCING'}[lang])
     page = page.replace('CONNECTED THINKING. PRACTICAL SOURCING.', {'en':'YOUR SOURCING PARTNER', 'fr':'VOTRE PARTENAIRE D’APPROVISIONNEMENT', 'zh-Hant':'YOUR SOURCING PARTNER'}[lang])
@@ -65,3 +66,20 @@ for lang, path in list(paths.items()) + [('en', '')]:
     target.mkdir(parents=True, exist_ok=True)
     (target / 'index.html').write_text(page)
     print('Built', target / 'index.html')
+
+from string import Template
+
+contact_template = Template((ROOT / 'src/contact.html').read_text())
+contact_intro = {
+    'en': ('Tell us what you need to source, where it will be used and when you need it.', 'Prepare a project brief'),
+    'fr': ('Indiquez-nous ce que vous recherchez, le lieu d’utilisation et le délai souhaité.', 'Préparer un descriptif du projet'),
+    'zh-Hant': ('歡迎告訴我們你想採購甚麼、使用地點和預計交付時間。', '整理你的項目需求'),
+}
+for lang, path in paths.items():
+    target = ROOT / 'dist' / path / 'contact'
+    target.mkdir(parents=True, exist_ok=True)
+    intro, brief = contact_intro[lang]
+    (target / 'index.html').write_text(contact_template.substitute(
+        lang=lang, path=path, title=copy['navStart'][lang], intro=intro, brief=brief,
+        messaging=copy['messagingContact'][lang], region=copy['contactLocation'][lang],
+    ))

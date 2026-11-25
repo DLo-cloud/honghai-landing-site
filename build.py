@@ -40,6 +40,7 @@ for lang, path in list(paths.items()) + [('en', '')]:
     languages += '</nav></details>'
     page = re.sub(r'<button id="language".*?</button>', languages, page)
     page = page.replace('./CONTACT_ROUTE', '/' + paths[lang] + '/contact/')
+    page = page.replace('FIELD_ROUTE', '/' + paths[lang] + '/field/')
     page = page.replace('src="./', 'src="' + prefix).replace('href="./', 'href="' + prefix)
     page = page.replace('SOLAR · STORAGE · SOURCING', {'en':'SOLUTION-LED SOURCING', 'fr':'APPROVISIONNEMENT & SOLUTIONS', 'zh-Hant':'SOLUTION-LED SOURCING'}[lang])
     page = page.replace('CONNECTED THINKING. PRACTICAL SOURCING.', {'en':'YOUR SOURCING PARTNER', 'fr':'VOTRE PARTENAIRE D’APPROVISIONNEMENT', 'zh-Hant':'YOUR SOURCING PARTNER'}[lang])
@@ -89,3 +90,25 @@ for lang, path in paths.items():
         lang=lang, path=path, title=copy['navStart'][lang], intro=intro, brief=brief,
         spoken=spoken, wa=wa, wc=wc, zoom=zoom, region=copy['contactLocation'][lang],
     ))
+
+# On-site service example, with one shared video and locale-specific contact routes.
+import json
+field_copy = json.loads((ROOT / 'src/field.json').read_text(encoding='utf-8'))
+field_template = Template((ROOT / 'src/field.html').read_text(encoding='utf-8'))
+field_alternates = '\n'.join(
+    f'<link rel="alternate" hreflang="{code}" href="https://cohesol.com/{locale}/field/">'
+    for code, locale in paths.items()
+) + '\n<link rel="alternate" hreflang="x-default" href="https://cohesol.com/en/field/">'
+for lang, path in paths.items():
+    languages = ''.join(
+        f'<a lang="{code}" hreflang="{code}" href="/{paths[code]}/field/"'
+        + (' aria-current="page"' if code == lang else '') + f'>{label}</a>'
+        for code, label in [('en', 'EN'), ('fr', 'FR'), ('zh-Hant', '繁中')]
+    )
+    target = ROOT / 'dist' / path / 'field'
+    target.mkdir(parents=True, exist_ok=True)
+    (target / 'index.html').write_text(field_template.substitute(
+        lang=lang, path=path, alternates=field_alternates, languages=languages,
+        **{k: html.escape(v, quote=True) for k, v in field_copy[lang].items()},
+    ), encoding='utf-8')
+    print('Built', target / 'index.html')

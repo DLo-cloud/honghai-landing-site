@@ -1,0 +1,16 @@
+.field-main{padding-top:clamp(26px,5vw,72px);padding-bottom:clamp(52px,8vw,110px);max-width:1200px}
+.field-header .field-nav,.field-kicker{display:flex;align-items:center;gap:clamp(10px,2vw,24px);flex-wrap:wrap}
+.field-header .field-nav{font-size:.875rem}
+.field-nav [aria-current=page]{font-weight:700;text-decoration:underline;text-underline-offset:.3rem}
+.field-kicker{color:var(--muted);font-size:.9rem;padding-bottom:1rem;gap:.65rem}
+.field-kicker a,.field-film a{text-decoration:underline;text-underline-offset:.25rem}
+.field-page .field-main h1{font-family:var(--serif);font-size:clamp(2.65rem,7.3vw,6rem);line-height:1.02;letter-spacing:-.035em;max-width:24ch}
+.field-story,.field-service p{font-size:clamp(1rem,1.7vw,1.15rem);line-height:1.75;max-width:62ch}
+.field-story{margin:1.3rem 0 1.8rem}
+.field-film iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;background:var(--ink)}
+.field-film figcaption{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between;color:var(--muted);font-size:.875rem;margin-top:.7rem}
+.field-film .text-link{font-size:inherit}
+.field-service{border-top:1px solid var(--line);margin-top:clamp(2.25rem,6vw,4.5rem);padding-top:clamp(1.5rem,3.8vw,3rem)}
+.field-service h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3.1rem);letter-spacing:-.02em;line-height:1.12}
+.field-service p{margin:.8rem 0 1.25rem}
+@media(max-width:420px){.field-header .brand .brand-logo{width:clamp(108px,37vw,150px);height:auto}.field-header .field-nav{gap:9px}}

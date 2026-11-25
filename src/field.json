@@ -1,0 +1,44 @@
+{
+  "zh-Hant": {
+    "home": "首頁",
+    "skip": "跳至主要內容",
+    "language": "選擇語言",
+    "section": "服務現場",
+    "product": "天花板的故事",
+    "story": "以前抬頭，吊頂多半只管遮住管線。從石膏板、金屬板到複合鋁扣板，它有了新任務：要耐用，表面用 PVC 覆膜，不用現場噴漆，背面還能加吸音棉。下次走進大堂，留意一下：少掉的那點回音，可能就跟你頭頂那塊板有關。",
+    "video_title": "鋁扣板生產線實拍",
+    "caption": "工廠實拍：裁切、成型、裝箱及量測畫面。",
+    "watch": "在 YouTube 觀看",
+    "service": "出貨前，我們可以替你看甚麼？",
+    "service_text": "先按你的用途約定尺寸、表面和試裝要求，再安排現場核對。你可以遠程查看照片、短片與量測記錄，再決定是否放行出貨。",
+    "contact": "談談你的項目"
+  },
+  "en": {
+    "home": "Home",
+    "skip": "Skip to content",
+    "language": "Choose a language",
+    "section": "Our Work on the Ground",
+    "product": "The story of a ceiling",
+    "story": "Look up. A suspended ceiling used to have one simple job: hiding the pipes. From plasterboard and metal panels to composite clip-in aluminium panels, the brief has grown: stand up to wear, skip on-site painting with a PVC film finish, and leave room for an optional sound-absorbing backing. Next time you walk into a lobby, listen: a little less echo might have something to do with the panel above your head.",
+    "video_title": "Inside an aluminium ceiling panel factory",
+    "caption": "Factory footage: cutting, forming, packing and a measurement close-up.",
+    "watch": "Watch on YouTube",
+    "service": "What can we check before your order ships?",
+    "service_text": "We agree the dimensions, finish and trial-fit requirements with you, then arrange checks at the factory. You can review photos, short clips and measurements remotely before deciding whether to approve shipment.",
+    "contact": "Tell us about your project"
+  },
+  "fr": {
+    "home": "Accueil",
+    "skip": "Aller au contenu",
+    "language": "Choisir la langue",
+    "section": "Nos missions sur le terrain",
+    "product": "L’histoire d’un plafond",
+    "story": "Levez les yeux. Autrefois, un plafond suspendu servait surtout à cacher les conduites. Des plaques de plâtre aux dalles métalliques puis composites en aluminium, le cahier des charges s’est élargi : résister à l’usure, éviter la peinture sur chantier grâce à un film PVC et permettre l’ajout d’un matériau absorbant au dos. La prochaine fois que vous entrerez dans un hall, tendez l’oreille : si l’écho est plus discret, la dalle au-dessus de votre tête y est peut-être pour quelque chose.",
+    "video_title": "Dans une usine de dalles de plafond en aluminium",
+    "caption": "Images tournées en usine : découpe, mise en forme, emballage et gros plan sur une mesure.",
+    "watch": "Regarder sur YouTube",
+    "service": "Que pouvons-nous vérifier avant l’expédition ?",
+    "service_text": "Nous convenons avec vous des dimensions, de la finition et des conditions d’un essai de montage, puis organisons les contrôles en usine. Vous pouvez examiner à distance les photos, les courtes vidéos et les relevés de mesures avant de donner votre accord pour l’expédition.",
+    "contact": "Parlez-nous de votre projet"
+  }
+}
